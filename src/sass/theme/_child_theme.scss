@@ -1,0 +1,241 @@
+// UTILITY CLASSES
+//positioning
+.left-0 {
+  left: 0;
+}
+.right-0 {
+  right: 0;
+}
+.top-0 {
+  top: 0;
+}
+.bottom-0 {
+  bottom: 0;
+}
+
+//colors
+.text-very-muted {
+  color: $text-very-muted;
+}
+.text-extremely-muted {
+  color: $text-extremely-muted;
+}
+.light-gradient {
+  background-image: $light-gradient;
+}
+
+// AUTOMATIC LIGHT LINKS ON DARK BG
+[class*="bg-dark"] a {
+  color: $light;
+}
+
+//wrap nbsp
+p {
+  overflow-wrap: break-word;
+}
+
+//custom titles
+h1, h2, h3, h4, h5, h6 {
+  a {
+    color: inherit;
+  }
+}
+h1:not([class~=h6]),
+.navbar-brand,
+.search h2 {
+  font-family: "Yeseva One", sans-serif;
+}
+
+
+//article paragraphs
+.entry-content p {
+  margin: 1em 0;
+}
+
+//links
+
+article *:not(h1, h2) a:hover {
+  background-color: $light;
+}
+
+h1,
+h2 {
+  a:not(:hover) {
+    color: $secondary;
+  }
+}
+.entry-footer {
+  a:not(:hover) {
+    color: $text-muted;
+  }
+}
+
+// header header, links and icons
+.entry-header {
+  margin-bottom: 25px;
+  .fa {
+    display: inline;
+  }
+  h1 a,
+  h2 a {
+    text-decoration: none;
+  }
+  a:not(:hover) i.fa {
+    display: none;
+  }
+  
+  .fa-chevron-right {
+    font-size: $font-size-lg;
+  }
+}
+
+.indicator-icon {
+  font-size: 1.25rem;
+  vertical-align: middle;
+}
+a .indicator-icon {
+  text-decoration: none;
+}
+
+.understrap-read-more-link {
+  white-space: nowrap;
+}
+
+/* #main a {
+  &:not(h1) {
+    color: $primary;
+  }
+  &:not(h2) {
+    color: $primary;
+  }
+  &:hover {
+    color: $primary;
+  }
+} */
+.dotted-link {
+  text-decoration: underline dotted;
+}
+
+//custom forms and searchbar
+textarea {
+  resize: none;
+}
+
+.form-control,
+.custom-searchbar input {
+  border-radius: 0;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  &:not(:focus) {
+    background-color: $gray-100 !important;
+  }
+}
+
+.custom-searchbar button {
+  margin: 0 !important;
+}
+
+//AUTOSIZE TEXTAREA
+//by Louis Lazeris
+/* TEXTAREA AUTO RESIZE STYLES BEGIN */
+
+/* The .hiddendiv styles are added with JS.
+   You can remove the JS lines and use CSS instead
+.hiddendiv {
+  display: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}*/
+
+/* the styles for 'txta' are applied to both the textarea and the hidden clone */
+/* these must be the same for both */
+.txta {
+  width: 100%;
+  max-width: 500px;
+  min-height: 100px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  overflow: hidden;
+  line-height: 1.4;
+}
+/* TEXTAREA AUTO RESIZE STYLES END */
+
+//navbar larger hover targets
+.nav-link,
+.navbar-brand {
+  padding-top: $navbar-nav-link-padding-y;
+  padding-bottom: $navbar-nav-link-padding-y;
+  &:hover {
+    background-color: $gray-400;
+  }
+}
+/* .navbar-brand {
+  padding-left: $navbar-nav-link-padding-y;
+  padding-right: $navbar-nav-link-padding-y;
+} */
+
+//main
+#main {
+  margin-bottom: 20px; //separate sidebar when wrapped at the bottom
+  padding: 20px;
+}
+
+//index special padding to allow for corner icons
+#index-wrapper {
+  #main {
+    padding: 0;
+  }
+  article {
+    padding: 10px 0 20px 20px;
+    position: relative;
+  }
+}
+
+//sidebar
+
+#main,
+.sidebar-container {
+  background-color: $white;
+}
+
+#right-sidebar {
+  a:not(:hover) {
+    color: $text-muted;
+  }
+  .sidebar-container {
+    padding: 10px;
+  }
+  h5 {
+    margin-top: 20px;
+  }
+}
+
+//darken picture on hover
+
+img.clickable-picture {
+  -webkit-filter: brightness(100%);
+}
+
+img.clickable-picture:hover {
+  -webkit-filter: brightness(90%);
+  /*     -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    transition: all .5s ease; */
+}
+
+// custom one-line links
+.entry-content p a:only-child {
+  font-weight: bold;
+}
+
+//fa icons
+.fa {
+  display: inline;
+}
+
+// WITH JS
+
+// icon on hover

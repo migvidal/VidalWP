@@ -1,0 +1,70 @@
+// Use this file to overwrite the basic Bootstrap variables and add your own variables
+// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
+// Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
+
+// used variables
+//colors
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000;
+$dark-blue: #060aeb;
+
+$primary: $dark-blue;
+$secondary: $gray-800;
+$light-gradient: linear-gradient($gray-100, $gray-300);
+
+
+$body-bg: $gray-300;
+
+$text-muted: $gray-600;
+$input-border-color: $gray-400;
+
+
+
+//enable gradients
+$enable-gradients: true;
+
+//spacing
+$spacer: 1rem;
+
+//container breakpoints
+/* $container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1240px
+); */
+
+//grid
+$grid-gutter-width: 16px;
+
+// new variables
+$text-very-muted: $gray-500;
+$text-extremely-muted: $gray-300;
+
+// overriden variables
+
+// navbar
+//larger targets
+$navbar-padding-y: 0;
+$navbar-nav-link-padding-y: $spacer;
+
+//toggler icon
+$navbar-dark-toggler-border-color: none;
+$navbar-light-toggler-border-color: none;
+
+//rounded
+$border-radius: 0.45rem;
+$border-radius-lg: 0.5rem;
+$border-radius-sm: 0.4rem;
+
+// links
+/* $link-color: $black; // a tags
+$link-decoration: underline $gray-600; */
