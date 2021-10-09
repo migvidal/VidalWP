@@ -29,13 +29,14 @@ defined('ABSPATH') || exit;
 		<div class="row">
 			<div class="col-md-4">
 				<?php
-				echo get_the_post_thumbnail(
+				echo_first_image($post->ID);
+				/* echo get_the_post_thumbnail(
 					$post->ID,
 					'thumbnail',
 					array(
 						'class' => 'rounded my-3'
 					)
-				);
+				); */
 				?> </div>
 			<div class="col-md-6">
 				<?php the_excerpt(); ?>

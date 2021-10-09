@@ -434,20 +434,66 @@ function vidalwp_the_title($heading = 'h1', $classes = array())
 
     echo '<div class="row">'
 
-    . the_title(
-        sprintf(
-            '<%s class="col entry-title %s"><a href="%s" rel="bookmark">',
-            $heading,
-            $classes,
-            esc_url(get_permalink())
-        ),
-        sprintf(
-            '<i class = "fa fa-chevron-right ml-3 indicator-icon"></i></a>
+        . the_title(
+            sprintf(
+                '<%s class="col entry-title %s"><a href="%s" rel="bookmark">',
+                $heading,
+                $classes,
+                esc_url(get_permalink())
+            ),
+            sprintf(
+                '<i class = "fa fa-chevron-right ml-3 indicator-icon"></i></a>
                 </a></%s>',
-            $heading
-        ),
-        false
-    )
-    . $post_icon
-    . '</div>';
+                $heading
+            ),
+            false
+        )
+        . $post_icon
+        . '</div>';
+}
+
+/**
+ * Returns first image of the post
+ * @return string
+ * @author Chris Coyier <https://chriscoyier.net>
+ * @link https://css-tricks.com/snippets/wordpress/get-the-first-image-from-a-post/
+ * 
+ */
+function catch_that_image()
+{
+    global $post, $posts;
+    $first_img = '';
+    ob_start();
+    ob_end_clean();
+    $output = preg_match_all('/<img.+?src=[\'"]([^\'"]+)[\'"].*?>/i', $post->post_content, $matches);
+    $first_img = $matches[1][0];
+
+    if (empty($first_img)) {
+        $first_img = "/path/to/default.png";
+    }
+    return $first_img;
+}
+function echo_first_image ($postID)
+{                   
+    $args = array(
+    'numberposts' => 1,
+    'order'=> 'ASC',
+    'post_mime_type' => 'image',
+    'post_parent' => $postID,
+    'post_status' => null,
+    'post_type' => 'attachment'
+    );
+
+    $attachments = get_children( $args );
+
+    //print_r($attachments);
+
+    if ($attachments) {
+        foreach($attachments as $attachment) {
+            $image_attributes = wp_get_attachment_image_src( $attachment->ID, 'thumbnail' )  ? wp_get_attachment_image_src( $attachment->ID, 'thumbnail' ) : wp_get_attachment_image_src( $attachment->ID, 'full' );
+
+            echo '<img src="'.wp_get_attachment_thumb_url( $attachment->ID ).'" class="current">';
+
+        }
+    }
 }
