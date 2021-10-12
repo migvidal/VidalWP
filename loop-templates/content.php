@@ -27,18 +27,17 @@ defined('ABSPATH') || exit;
 
 	<?php if (has_post_thumbnail()) : ?>
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col">
 				<?php
-				echo_first_image($post->ID);
-				/* echo get_the_post_thumbnail(
+				echo get_the_post_thumbnail(
 					$post->ID,
 					'thumbnail',
 					array(
-						'class' => 'rounded my-3'
+						'class' => 'p-xl-2'
 					)
-				); */
+				);
 				?> </div>
-			<div class="col-md-6">
+			<div class="col-9">
 				<?php the_excerpt(); ?>
 			</div>
 		</div>
