@@ -8,7 +8,3 @@ Simple and elegant, offers fast performance and fluidity. And also...
 - Modern form beahavior
 
 - Automatic icons for your post format
-
-
-
-![Tux, the Linux mascot](/assets/images/tux.png)
